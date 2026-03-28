@@ -53,6 +53,8 @@ async function getGenericSheetData(sheetName: string) {
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
       range: `${sheetName}!A:ZZ`,
+      valueRenderOption: 'FORMATTED_VALUE',
+
     });
 
     const rows = response.data.values;
